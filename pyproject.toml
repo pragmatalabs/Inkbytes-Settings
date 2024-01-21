@@ -1,14 +1,17 @@
 [tool.poetry]
-name = "inkbytes-settings-package"
+name = "ikbSettings"
 version = "0.1.0"
 description = "Settings Package for Inkbytes System"
 authors = ["Julian De La Rosa <julian.delarosa.suncar@gmail.com>"]
 readme = "README.md"
-
+packages = [{include = "*", from = "."}]
+exclude = ["./dist", "./dist/*"]
 [tool.poetry.dependencies]
 python = "^3.10"
 python-dotenv = "1.0.0"
 
+[tool.project.scripts]
+my-client = {reference="_install.install:main",type="console"}
 
 [build-system]
 requires = ["poetry-core"]

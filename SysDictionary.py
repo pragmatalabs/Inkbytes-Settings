@@ -1,10 +1,12 @@
-
 import os
 from dotenv import load_dotenv
 
 
-def config():
+class SysDictionary():
+    pass
 
+
+def config():
     load_dotenv(os.path.join(os.pardir, ".env"))
     base_system_folder = os.path.join(os.pardir)
     app_folder = base_system_folder
@@ -45,7 +47,6 @@ APP_GLOBAL_CONF = {
 THREADING_CONF = {"MAX_THREADS": int(os.getenv("MAX_THREADS", 5))}
 TIME_ZONE = os.getenv("TIME_ZONE", "UTC")
 
-
 MODE_CONFIG = {
     "development": {
         "data_slicing_size": int(os.getenv("DEVELOPMENT_DATA_SLICING_SIZE", 100)),
@@ -58,7 +59,6 @@ MODE_CONFIG = {
         "database_slicing_size": int(os.getenv("PRODUCTION_DATABASE_SLICING_SIZE", -1)),
     },
 }
-
 
 UUID_PREFIX = os.getenv("UUID_PREFIX", "IKPGRB")
 BACKOFFICE_API_URL = os.getenv("BIFROST_API_BASE_URL", "")
