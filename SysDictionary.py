@@ -69,7 +69,7 @@ OPEN_AI = {
 }
 
 OUTLETS = {
-    "file": os.path.join(outlets_folder, "outlets.json"),
+    "file": os.path.join(outlets_folder, "models.json"),
 }
 
 LANGUAGES = {
